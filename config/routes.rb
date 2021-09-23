@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'users/:id/edit' =>  'users#edit', as: 'edit_user'
   get 'books' => 'books#index'
   get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+  get 'users/index' => 'users#index'
+
   patch 'books/:id' => 'books#update', as: 'update_book'
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'
 
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   resources :homes
   resources :users
   resources :books
+  resources :users, only: [:show]
 
 
 
