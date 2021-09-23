@@ -19,8 +19,9 @@
  <td>introduction</td>
  <td><%= current_user.introduction %></td>
  </tr>
+ <p>
  <%= link_to "edit", user_path(current_user.id) %>
-
+</p>
 
 
 <% end %>
@@ -40,6 +41,16 @@
 <% end %>
    </div>
    <div class="col-8">
+
+     <h1>Book detail</h1>
+     <% @books.each do |book| %>
+     <p>
+       <%= attachment_image_tag @user, :attachment_image_tag, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+       <%= book.title %>
+       <%= book.body %>
+      </p>
+       <% end %>
+
 
    </div>
   </div>
