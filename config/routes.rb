@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post 'books' => 'books#create'
   get 'users/:id/edit' =>  'users#edit', as: 'edit_user'
   get 'books' => 'books#index'
+  get 'books/:id/edit' => 'books#edit', as: 'edit_book'
+  patch 'books/:id' => 'books#update', as: 'update_book'
 
 
   resources :homes
