@@ -4,19 +4,21 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
-    book.save
-    redirect_to '/books/show'
+    @book = Book.new(book_params)
+    user_id = current_user.id
+    @book.save
+    redirect_to book_path(@book.id)
   end
 
   def index
-     # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する。
+     # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する?
     @book = Book.new
     @books = Book.all
     
   end
 
   def show
+    
   end
 
   def destroy
