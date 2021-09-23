@@ -14,11 +14,12 @@ class BooksController < ApplicationController
      # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する?
     @book = Book.new
     @books = Book.all
-    
+
   end
 
   def show
-    
+    @book = Book.find(params[:id])
+
   end
 
   def destroy
