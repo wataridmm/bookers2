@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  def show
-     #@user = User.find(params[:id])
+  def index
+     @user = User.find(params[:id])
+     @users = Name.find(params[:id]).reverse_order
   end
+  
 end
