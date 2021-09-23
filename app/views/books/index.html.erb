@@ -17,7 +17,8 @@
  <td>introduction</td>
  <td><%= current_user.introduction %></td>
  </tr>
- <%= link_to ""
+ <%= link_to "edit", user_path(current_user.id) %>
+ 
 
 
 <% end %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'books/index'
   get 'books/show'
   post 'books' => 'books#create'
+  get 'users/:id/edit' =>  'users#edit', as: 'edit_user'
 
 
   resources :homes
