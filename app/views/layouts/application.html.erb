@@ -62,14 +62,7 @@
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
 
-  
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this obj from being saved:
-  <% @book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
-        
+
 
     <%= yield %>
 
