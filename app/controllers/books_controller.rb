@@ -37,9 +37,9 @@ before_action :correct_user, only: [:edit, :update]
     if @book.update(book_params)
 
      redirect_to book_path(@book.id), notice: "You have updated book successfully."
-   else
+    else
      render :edit
-   end
+    end
   end
 
   def destroy
@@ -52,11 +52,13 @@ before_action :correct_user, only: [:edit, :update]
   def book_params
     params.require(:book).permit(:title, :body, :user_id)
   end
+
   def correct_user
-    
-    @user = User.find(params[:id])
+    @book = Book.find(params[:id])
+    @user = 
     if @user != current_user
       redirect_to(books_path)
     end
   end
+
 end
