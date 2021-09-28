@@ -16,7 +16,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
 
-    <%= link_to "Bookers", '/' %>
+    <%= link_to "Bookers", root_path %>
     <% if user_signed_in? %>
       <li>
         <%= link_to "Home", user_path(current_user.id)%>
@@ -43,10 +43,10 @@
 
     <% else %>
       <li>
-        <%= link_to "Home", '/'%>
+        <%= link_to "Home", root_path %>
       </li>
       <li>
-        <%= link_to "About", '/homes/about.html' %>
+        <%= link_to "About", homes_about_path %>
       </li>
       <li>
         <%= link_to "Sign Up", new_user_registration_path %>
