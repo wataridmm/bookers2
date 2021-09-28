@@ -28,8 +28,6 @@ class UsersController < ApplicationController
     @books = @user.books.all
     @book = Book.new
    
-
-
   end
 
 private
