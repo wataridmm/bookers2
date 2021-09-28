@@ -19,6 +19,7 @@ before_action :correct_user, only: [:edit, :update]
      # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する?
     @book = Book.new
     @books = Book.all
+    @user = User.find(current_user.id)
 
   end
 
